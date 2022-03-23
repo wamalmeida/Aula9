@@ -1,0 +1,19 @@
+Frase = 'Curso em video python'
+
+======= Manipulando textos!=======
+   ->Fatiamento de string
+      -Para buscar apenas uma letra da string 'Frase', basta usar o comando Frase[9]. O número inserido dentro do colchete deve ser correspondente a letra que se almeja.
+      -Também é possível buscar uma sequencia de letras usando Frase[9:15], neste caso o primeiro número número será correspondente a letra inicial da busca e o último 
+número será a letra final. Também é possível realizar a busca das seguintes maneiras: Frase[:9] ou Frase[9:]. A falta de um número correspondente será lida como "desde
+o início" ou "até o final" respectivamente.
+      -Caso seja inserido um terceiro número dentro do colchete, isso indicará o espaçamento da busca, por exemplo: Frase[9:20:2] retornará o seguinte resultado:
+V_D_O P_t_O
+
+   ->Análise
+      -len(Frase) comando utilizado para contar quantos micro-espaços estão sendo utilizados pela string
+      -Frase.count('o') comando utilizado para contar quantas letras estão sendo usadas dentro da string, neste caso específico o resultado seria 3 visto que a letra O
+ aparece 3 vezes na frase. 
+      -Também é possível a contagem dentro de um determinado espaço da frase, para isso basta adicional os números respectivos ao espaço requerido, por exemplo:
+ Frase.count(o,0,13), este comando retornará o número de vezes que O apareceu desde o primeiro micro-espaço até o 12.
+      -Caso precise realizar uma busca de palavras inteiras, utilize o comando frase.find('video') e o python lhe mostrará em qual micro-espaço tal palavra teve inicio,
+ neste caso o resultado seria "9".
