@@ -1,7 +1,7 @@
 Frase = 'Curso em video python'
 
 ======= Manipulando textos!=======
-   ->Fatiamento de string
+   ->->->Fatiamento de string
       -Para buscar apenas uma letra da string 'Frase', basta usar o comando Frase[9]. O número inserido dentro do colchete deve ser correspondente a letra que se almeja.
       -Também é possível buscar uma sequencia de letras usando Frase[9:15], neste caso o primeiro número número será correspondente a letra inicial da busca e o último 
 número será a letra final. Também é possível realizar a busca das seguintes maneiras: Frase[:9] ou Frase[9:]. A falta de um número correspondente será lida como "desde
@@ -9,7 +9,17 @@ o início" ou "até o final" respectivamente.
       -Caso seja inserido um terceiro número dentro do colchete, isso indicará o espaçamento da busca, por exemplo: Frase[9:20:2] retornará o seguinte resultado:
 V_D_O P_t_O
 
-   ->Análise
+ANOTAÇÕES SOBRE FATIAMENTO¬
+                           frase= 'curso em video python'
+                           
+                           print(frase[3])
+                           print(frase[0:5])
+                           print(frase[2:])
+                           print(frase[:10])
+                           print(frase[0:10 :2])   
+                           
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   ->->->Análise
       -len(Frase) comando utilizado para contar quantos micro-espaços estão sendo utilizados pela string
       -Frase.count('o') comando utilizado para contar quantas letras estão sendo usadas dentro da string, neste caso específico o resultado seria 3 visto que a letra O
  aparece 3 vezes na frase. 
@@ -17,3 +27,91 @@ V_D_O P_t_O
  Frase.count(o,0,13), este comando retornará o número de vezes que O apareceu desde o primeiro micro-espaço até o 12.
       -Caso precise realizar uma busca de palavras inteiras, utilize o comando frase.find('video') e o python lhe mostrará em qual micro-espaço tal palavra teve inicio,
  neste caso o resultado seria "9".
+      -Para sabe ser existe determinada palavra dentro da string, basta usar o operador *'curso' in Frase*, primeiro se digita a palavra desejada seguindo de "in + string"
+ esta operação retorna "True" ou "False" dizendo se existe ou não existe a palavra buscada na string.
+ 
+ ANOTAÇÕES SOBRE ANALISE¬
+                        frase= 'curso em video python'
+                        print(frase.count('o'))   resultado=3
+                        print(frase.count('O'))   resultado=0
+#Necessário saber que letras minúsculas são diferidas de letras maiúsculas, por isso ambas fórmulas acima mostrarão resultados diferentes. Caso queira saber o total
+de letras 'O' aparece na string independente de minuscula/maiuscula, poderá tranformar todas as letras em uniforme com o comando:
+                        print(Frase.upper().count('O'))    Está formula transformará todas as letras da string em maiúscula e logo em seguida contará todos os O contidos.
+                        
+                        
+                                
+                        Frase= 'Curso em Video Python'
+                        print(len(Frase))   Este comando 'len' é utilizado para contar micro-espaços na string, no exemplo acima a resposta seria 21. Necessário lembrar
+que a contagem sempre irá começar no 0 e terminar com 1 número após o final da frase.
+
+                       frase= '   Curso em 'Video Python   '
+                       print(len(frase))    Neste caso o comando 'len' retornária um resultado 27 para o número de micro-espaços visto que foram adicionados espaços no
+inicio e ao final da string.
+                       print(len(frase.strip())    Este comando retornará novamente o resultado 21, pois o comando strip retira os micro-espaços em branco no inicio e final da string.
+                       
+                       frase= 'Eu odeio jogar League of legends. A empresa riot games anda estragando o jogo já faz um bom tempo'
+                       print(frase.find('a'))
+                       print(frase.find('A'))
+                       print(frase.find('anda'))
+                       print(frase.count('a'))
+                       print(frase.upper().count("A"))
+                        
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   ->->->Tranformação
+      -É possível substituir palavras dentro da string, para isso basta usar o comando Frase.replace('python', 'android'). A primeira palavra será sempre a que deseja-se
+substituir e a segunda palavra a que ficará no lugar da primeira.
+      -Também é possivél tranformar as letras da string de diferentes formas, algumas delas são:
+            ¬Frase.upper() = tornará as palavras em maiúsculas.
+            ¬Frase.lower() = tornará as palavras em minúsculas.
+            ¬Frase.capitalize() = tornará todas as palavras da string em minúsculas, EXCETO a primeira letra da primeira palavras, que se tornará maiúscula.
+            ¬Frase.title() = tornará as primeiras letras de CADA palavra em maiúsculas e as demais letras de cada palavra se tornaram minúsculas.
+            ¬Frase.strip() = eliminará todos os micro-espaços em branco no inicio ou final da string.
+            ¬Frase.rstrip() = right strip = eliminará somente os micro-espaços em branco ao fim da string (ou da direita)
+            ¬Frase.lstrip() = left strip = eliminará somente os micro-espaços em branco ao inicio da string (ou da esquerda)
+            
+ANOTAÇÕES SOBRE TRANSFORMAÇÃO¬
+                              O comando replace não substitui a palavra por completo na string, apenas na instancia que ele ele foi digitado!                               
+                               
+                         
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+  ->Divisão
+      -É possível dividir toda a string em uma lista de diferentes formas com o comando Frase.split(). Por padrão, sem digitar um comando entre os parenteses, o comando
+split irá dividir a string em palavras, ou seja, cada micro-espaço vazio receberá uma quebra. A frase acima seria quebrada em ['Curso','Em','Video','Python']. Mas também
+existe a possibilidade de quebrar a string em letras determinadas, para isso basta digitar a letra desejadas dentro dos parentes, como por exemplo: Frase.split('o')     
+neste exemplo a string seria quebrada em ['Curs', 'em vide', 'Pyth', 'n']     
+      -De maneira reversa a função Split, podemos juntar uma string usando ''.join(Frase), o que for digitado entre as primeiras aspas será também digitado na hora da junção
+como por exemplo: ' '.join(frase)  que juntará as palavras quebradas colocando um espaço entre elas.
+
+ANOTÇÕES SOBRE DIVISÃO¬
+                       
+                       
+                       frase= 'Curso em Video Python'
+                       dividido= frase.split()
+                       print(dividido[0])       Colocando apenas 1 colchete o programa retornara o primeiro elemento da lista que foi criada ao dividir a string
+                       print(dividido[2] [3])   Colocando 2 colchetes, você receberá a letra que está no micro-espaço correspondente. Neste caso o resultado seria 
+apenas a letra 'e', pois esta é a letra 3 do elemendo 2 após a divisão da string.   
+     
+     
+     
+     
+     
+     
+=======EXERCICIO DE PRÁTICA DA AULA 09=========
+CRIE UM PROGRAMA QUE:
+1) Leia o nome completo de uma pessoa
+2) Escreva o nome completo em maiusculo
+3) Escreva o nome completo em minusculo
+4) Conte em quantos micro-espaços o nome foi escrito
+5) Conte quantas letras possuem o nome da pessoa
+6) Conte quantas letras possuem o primeiro nome da pessoa
+
+Resposta:
+nome= input('Qual o seu nome completo? ')
+print(nome.upper())
+print(nome.lower())
+print(len(nome))
+print(len((nome))-(nome.count(' ')))
+nomeDividido= nome.split()
+print(len(nomeDividido[0]))
+     
+            
