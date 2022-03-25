@@ -113,5 +113,56 @@ print(len(nome))
 print(len((nome))-(nome.count(' ')))
 nomeDividido= nome.split()
 print(len(nomeDividido[0]))
-     
-            
+
+CRIE UM PROGRAMA QUE:
+Leia um numero de 0 a 9999 e mostre na tela cada número separado, exemplo: unidade:9 dezena:9 centena:9 milhar:9
+
+Resposta:
+num = (input("Digite um número de 0 a 9999: "))
+print("""Unidade: {}
+Dezenas: {}
+Centenas:{}
+Milhar: {}""".format(num[3], num[2], num[1], num[0]))
+
+CRIE UM PROGRAMA QUE:
+Leia o nome da cidade e diga se ela começa com 'Santo'
+
+Resposta:
+cidade= input("Digite o nome da sua cidade: ")
+cidade2= cidade.upper().split()
+if ('SANTO' in cidade2[0]) == True:
+    print('O nome da cidade começa com Santo')
+else:
+    print('O nome da cidade NÃO começa com Santo')
+    
+
+CRIE UM PROGRAMA QUE:
+Leia o nome de uma pessoa e diga se ela possui 'Silva no nome"
+
+RESPOSTA:
+nome= input('Diga qual o seu nome: ')
+nome1= nome.title()
+if ('Silva' in nome1) == True:
+    print('O nome digitado possui Silva!')
+else:
+    print("O nome digitado não possui Silva!")
+
+CRIE UM PROGRAMA QUE:
+Leia uma frase qualquer, em seguida mostre quantas vezes aparece a letra A e também mostre em qual micro-espaço ela apareceu pela primeira e ultima vez.
+
+RESPOSTA:
+frase= input('Digite uma frase qualquer: ')
+frase=frase.upper()
+print(frase.count('A'))
+print(frase.find('A'))
+print(frase.rfind('A'))
+
+CRIE UM PROGRAMA QUE:
+Leia o nome completo, mostre o primeiro e o último nome:
+
+RESPOSTA:
+nome= input("Digite seu nome completo: ")
+nome2= nome.split()
+print('O primeiro nome é: {}'.format(nome2[0]))
+print('O seu último nome é: {}'.format(nome2[len(nome2)-1]))
+
